@@ -26,10 +26,9 @@ def get_english_meaning (emoticon_file, jpn_emoticon)
     languages[:japanese] == jpn_emoticon
   end
 
-  if
-    meaning = nil
-  else
+  if meaning == nil
     "Sorry, that emoticon was not found"
+  else
+    meaning[0]
   end
-  meaning[0]
 end
