@@ -22,14 +22,14 @@ end
 
 def get_english_meaning (emoticon_file, jpn_emoticon)
   eng_meaning = load_library(emoticon_file)
- 
-  eng_meaning.find do |name, languages|
+  meaning = eng_meaning.find do |name, languages|
     languages[:japanese] == jpn_emoticon
     binding.pry
 end
-  if 
+  if
+    meaning = nil
   else
-    "Sorry"
+    "Sorry, that emoticon was not found"
   end
-
+  meaning[0]
 end
