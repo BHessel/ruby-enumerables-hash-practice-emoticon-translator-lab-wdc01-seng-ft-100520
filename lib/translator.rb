@@ -14,11 +14,19 @@ def load_library (emoticon_file)
 end
 
 
-def get_japanese_emoticon
-  
-  #input of eng emoticon
-  #output of japanese emoticon 
+def get_japanese_emoticon (emoticon_file, eng_emoticon)
+  library = load_library (emoticon_file)
+  translation = library.find do |name, languages|
+    languages[:english] == eng_emoticon
+  end
+  if !translation
+    "Sorry, that emoticon was not found"
+  else
+    translation[1][:japanese]
+  end
 end
+
+
 
 def get_english_meaning (emoticon_file, jpn_emoticon)
   eng_meaning = load_library (emoticon_file)
