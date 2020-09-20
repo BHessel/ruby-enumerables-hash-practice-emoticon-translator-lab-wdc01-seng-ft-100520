@@ -14,8 +14,7 @@ def load_library (emoticon_file)
 end
 
 
-def get_japanese_emoticon(emoticon_file, eng_emoticon)
-  library = load_library(emoticon_file)
+def get_japanese_emoticon
   
   #input of eng emoticon
   #output of japanese emoticon 
@@ -24,15 +23,9 @@ end
 def get_english_meaning (emoticon_file, jpn_emoticon)
   eng_meaning = load_library(emoticon_file)
   e_mean_hash = {}
-  eng_meaning.each do |name, jpn_emoticon|
-    #e_mean_hash = {name => jpn_emoticon}
-    e_mean_hash[name] = {jpn_emoticon[1]}
+  eng_meaning.find do |name, jpn_emoticon|
+    
     binding.pry
 end
-  
- 
-#scan eng_meaning hash
-#return the english word 
-#return jpn emoticon, value [1]
 
 end
